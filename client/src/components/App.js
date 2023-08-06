@@ -1,22 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import NavBar from "./NavBar";
+import NewBook from "./NewBook";
+import AllBooks from "./AllBooks";
+import Home from "./Home";
+
+// API = 'http://localhost:5555/books'
 
 function App() {
-	const [value, setValue] = useState(new Date());
+	const [books, setBooks] = useState([])
 
-	// test
+	// useEffect(() => fetch(API)
+    //     .then(res => res.json())
+    //     .then(setBooks), [])
+
 
 	return (
 		<div>
-			<h1>Phase 4 Project Client</h1>
-			<Calendar
-                onChange={setValue}
-                value={value}
-            />
+			
+			<NavBar />
+			<Switch>
+				<Route exact path="/">
+					<Home books={books}/>
+				</Route>
+				<Route exact path="/new">
+					<NewBook addNewBook={addNewBook}/>
+				</Route>
+				<Route exact path="/books">
+					<AllBooks books={books} />
+				</Route>
+			</Switch>
 		</div>
-	);
+	)
+
+	function addNewBook(newBook) {
+		console.log(newBook)
+	}
 }
 
 export default App;
