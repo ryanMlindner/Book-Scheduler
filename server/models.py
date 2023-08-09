@@ -45,6 +45,8 @@ class Schedule(db.Model, SerializerMixin):
 class BookRating(db.Model, SerializerMixin):
     __tablename__ = 'bookratings'
 
+    serialize_rules = ('-book.ratings',)
+
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Integer)
     description = db.Column(db.String)
@@ -55,6 +57,8 @@ class BookRating(db.Model, SerializerMixin):
  
 class DayRating(db.Model, SerializerMixin):
     __tablename__ = 'dayratings'
+
+    serialize_rules = ('-day.ratings',)
 
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Integer)
