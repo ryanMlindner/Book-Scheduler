@@ -32,9 +32,24 @@ show the schedule, a stock of books, and a list of all the days that people are 
 
 ---
 
+## ERD
+
+![Relationship Diagram](./extras/Phase4ERD.png)
+
 ## User Stories
 
-TODO
+as a user, I want:
+	- there to be a calendar where i can select a day to see what books are scheduled that day
+	- a list of all the currently available books/unavailable books
+	- search functionality for the list
+  - a list of ratings for days
+  - a list of ratings for books
+  - options to see ratings for an individual day or book
+	- a form to add in a new book
+  - a form to add a rating to a day or book
+	- a button to reserve a book for an amount of time
+	- a nav bar
+	- a home page for information about the app and authors
 
 ---
 
