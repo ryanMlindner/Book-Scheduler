@@ -49,7 +49,7 @@ def create_random_dayratings():
         rating = DayRating(
             value=randint(1,5),
             description=fake.sentence(nb_words=10),
-            author=fake.name(),
+            rating_author=fake.name(),
             day_id=rc(days).id,
         )
         ratings.append(rating)
@@ -62,7 +62,7 @@ def create_random_bookratings():
         rating = BookRating(
             value=randint(1,5),
             description=fake.sentence(nb_words=10),
-            author=fake.name(),
+            rating_author=fake.name(),
             book_id=rc(books).id,
         )
         ratings.append(rating)
