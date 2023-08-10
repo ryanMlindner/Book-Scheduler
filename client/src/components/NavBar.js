@@ -9,7 +9,7 @@ function NavBar(){
                 <div className="three column row">
             <NavLink className="add-book column" activeClassName="current"
             to="/new" exact>Add Book</NavLink>
-            <NavLink className="header column" activeClassName="current"
+            <NavLink className="title column" activeClassName="current"
             to="/" exact >Book Schedule</NavLink>
             <NavLink className="all-books column" activeClassName="current"
             to="/books" exact>All Books</NavLink>

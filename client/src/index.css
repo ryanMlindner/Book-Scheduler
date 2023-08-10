@@ -28,6 +28,19 @@
 
 }
 
+.title {
+	font-size: 30px;
+	font-weight: bold;
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	text-decoration:none;
+	color: black;
+	margin: 0 auto;
+
+}
+
 .all-books {
 	float: right;
 	padding: 10px;
