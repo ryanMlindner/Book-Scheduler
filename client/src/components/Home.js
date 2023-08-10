@@ -43,15 +43,28 @@ function Home(){
         console.log(day)
     }
 
+    function checkDisplay(day) {
+        let disp = false
+        if (day){
+            if (day.schedules.length > 0) {
+                disp = true
+            }
+        }
+        return disp
+    }
+
     return(
-        <div className="ui grid">
-            <div className="six wide column">
-                <Calendar onChange={(e) => handleChange(e)} value={value} />
-            </div>
-            <div className="ui cards">
-                {day.schedules ?
-                day.schedules.map(schedule => <Schedule key={schedule.id} schedule={schedule} />)
-                : <h1>No Books Scheduled today</h1>}
+        <div>
+        <div className="buffer"></div>
+            <div className="ui grid">
+                <div className="six wide column">
+                    <Calendar onChange={(e) => handleChange(e)} value={value} />
+                </div>
+                <div className="ui cards">
+                    {checkDisplay(day) ?
+                    day.schedules.map(schedule => <Schedule key={schedule.id} schedule={schedule} />)
+                    : <h1>No Books Scheduled today</h1>}
+                </div>
             </div>
         </div>
     )
