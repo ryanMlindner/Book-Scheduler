@@ -5,7 +5,7 @@ import BookCard from "./BookCard";
 import BookDetails from "./BookDetails";
 import { useRecoilState, useRecoilValue } from "recoil";
 
-function AllBooks(){
+function AllBooks({ deleteBook }){
     const [currentBook, setCurrentBook] = useRecoilState(bookAtom)
     const books = useRecoilValue(booksAtom)
     console.log("render all books")
@@ -24,7 +24,8 @@ function AllBooks(){
             return <BookCard 
             key={book.id} 
             book={book}
-            handleClick={handleClick}/>})
+            handleClick={handleClick}
+            deleteBook={deleteBook}/>})
             : <h1>Loading...</h1>
             }
         </div>

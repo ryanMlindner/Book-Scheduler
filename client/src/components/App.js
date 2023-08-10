@@ -45,7 +45,7 @@ function App() {
 					<NewBook addNewBook={addNewBook}/>
 				</Route>
 				<Route exact path="/books">
-					<AllBooks/>
+					<AllBooks deleteBook={deleteBook}/>
 				</Route>
 				<Route exact path="/schedule">
 					<NewScheduleDisplay/>
@@ -60,29 +60,33 @@ function App() {
 		</div>
 	)
 
-	function scheduleBook(book) {
-		const dayID = days.find(d => new Date(d.date).toDateString() === new Date().toDateString()).id
-        const newSchedule = {
-            day_id: dayID,
-            book_id: book.id
-        }
+	// function scheduleBook(book) {
+	// 	const dayID = days.find(d => new Date(d.date).toDateString() === new Date().toDateString()).id
+    //     const newSchedule = {
+    //         day_id: dayID,
+    //         book_id: book.id
+    //     }
 
-		console.log(newSchedule)
+	// 	console.log(newSchedule)
 
-        fetch(`${API}/schedule`, {
-            method: "POST",
-            headers:{
-                Accepts: "application/json",
-                "Content-type" : "application/json",
-            },
-            body: JSON.stringify(newSchedule),
-        })
-		.then(res => res.json())
-		.then(json => setSchedules([...schedules, json]))
-    }
+    //     fetch(`${API}/schedule`, {
+    //         method: "POST",
+    //         headers:{
+    //             Accepts: "application/json",
+    //             "Content-type" : "application/json",
+    //         },
+    //         body: JSON.stringify(newSchedule),
+    //     })
+	// 	.then(res => res.json())
+	// 	.then(json => setSchedules([...schedules, json]))
+    // }
 
 	function deleteBook(book) {
-
+		console.log(book)
+		fetch(`${API}/books/${book.id}`, {
+			method:"DELETE",
+		})
+		setBooks(books.filter(b => b.id !== book.id))
 	}
 
 	function addNewBook(newBook) {
