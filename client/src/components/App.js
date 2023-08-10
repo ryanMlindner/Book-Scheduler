@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { booksAtom, daysAtom } from "../helperFunctions/atoms"; 
+import { bookAtom, booksAtom, daysAtom } from "../helperFunctions/atoms"; 
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import NewBook from "./NewBook";
@@ -14,6 +14,7 @@ const API = 'http://localhost:5555/'
 
 function App() {
 	const [books, setBooks] = useRecoilState(booksAtom)
+	const [book, setBook] = useRecoilState(bookAtom)
 	const [days, setDays] = useRecoilState(daysAtom)
 
 	useEffect(() => {
@@ -86,6 +87,7 @@ function App() {
 		fetch(`${API}/books/${book.id}`, {
 			method:"DELETE",
 		})
+		.then(setBook({}))
 		setBooks(books.filter(b => b.id !== book.id))
 	}
 
