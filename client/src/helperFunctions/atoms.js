@@ -10,7 +10,6 @@ export const daysAtom = atom({
   default: ''
 })
 
-
 export const bookAtom = atom({
   key: 'bookKey',
   default: ''
@@ -18,5 +17,15 @@ export const bookAtom = atom({
 
 export const dayAtom = atom({
   key: 'dayKey',
+  default: ''
+})
+
+export const dayRatingsAtom = atom({
+  key: 'dayRatingsKey',
+  default: ''
+})
+
+export const bookRatingsAtom = atom({
+  key: 'bookRatingsKey',
   default: ''
 })

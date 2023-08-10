@@ -31,13 +31,13 @@ def populate_dates():
             yield start_date + timedelta(n)
     
     dates = []
-    start_date = date(2023, 8, 8)
-    end_date = date(2023, 12, 25)
+    start_date = date(2023, 1, 1)
+    end_date = date(2023, 12, 31)
 
     for date_instance in daterange(start_date, end_date):
         day = Day(
             date=date_instance,
-            weekday=date_instance.weekday(),
+            weekday=date_instance.strftime('%A'),
         )
         dates.append(day)
     return dates

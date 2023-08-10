@@ -11,7 +11,7 @@ function BookCard({ book, handleClick, deleteBook }){
             <div className="extra content">
                 <div className="ui basic two buttons">
                     <div className="ui basic blue button" 
-                    onClick={() => handleClick(book)}>Add to Calendar</div>
+                    onClick={() => handleClick(book)}>Add to Schedule</div>
                     <div className="ui basic red button" 
                     onClick={() => deleteBook(book)}>Delete Book</div>
                 </div>
