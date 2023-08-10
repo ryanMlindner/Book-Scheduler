@@ -5,9 +5,14 @@ function NavBar(){
 
     return(
         <div className="navbar-container">
-            <NavLink className="add-book" to="/new" exact>Add Book</NavLink>
-            <NavLink className="all-books" to="/books" exact>All Books</NavLink>
-            <NavLink className="header" to="/" exact >Book Schedule</NavLink>
+            <NavLink className="add-book" activeClassName="current"
+            to="/new" exact>Add Book</NavLink>
+            <NavLink className="all-books" activeClassName="current"
+            to="/books" exact>All Books</NavLink>
+            <NavLink className="header" activeClassName="current"
+            to="/" exact >Book Schedule</NavLink>
+            <NavLink className="add-schedule" activeClassName="current"
+            to="/schedule" exact>New Schedule</NavLink>
         </div>
     )
 }

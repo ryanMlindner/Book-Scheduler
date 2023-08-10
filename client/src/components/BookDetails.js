@@ -1,15 +1,13 @@
 import React from "react";
 
-
-function BookDetails({ book, setClicked, scheduleBook, deleteBook }){
+function BookDetails({ book }){
 
     return(
-        <div >
-            <button onClick={() => setClicked(false)}>Go back</button>
-            <h2>Title: {book.title}</h2>
-            <h3>Author: {book.author}</h3>
-            <button onClick={() => scheduleBook(book)}>Schedule book</button>
-            <button onClick={() => deleteBook(book)} >Delete book</button>
+        <div className="ui fluid card">
+            <div className="content">
+                <div className="header">Title: {book.title}</div>
+                <div className="description">Author: {book.author}</div>
+            </div>
         </div>
     )
 }

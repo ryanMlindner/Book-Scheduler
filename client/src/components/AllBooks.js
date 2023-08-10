@@ -1,19 +1,32 @@
 import React, { useState } from "react";
+import { bookAtom, booksAtom } from "../helperFunctions/atoms";
+
 import BookCard from "./BookCard";
 import BookDetails from "./BookDetails";
+import { useRecoilState, useRecoilValue } from "recoil";
 
-function AllBooks({ books, scheduleBook, deleteBook }){
-    const [clicked, setClicked] = useState(false)
-    const [currentBook, setCurrentBook] = useState()
+function AllBooks(){
+    const [currentBook, setCurrentBook] = useRecoilState(bookAtom)
+    const books = useRecoilValue(booksAtom)
+    console.log("render all books")
+    console.log(books)
 
-    function bookDetails(book){
-        setClicked(true)
+    //grabs book object from the clicked button for use in schedule
+    function handleClick(book){
         setCurrentBook(book)
+        //console.log(currentBook)
     }
 
     return(
-        <div>
-            {clicked ? <BookDetails book={currentBook} setClicked={setClicked} scheduleBook={scheduleBook} deleteBook={deleteBook} /> : books.map(book => <BookCard key={book.id} book={book} bookDetails={bookDetails} />)}
+        <div className="ui cards four wide column">
+            {books ?
+            books.map(book => {
+            return <BookCard 
+            key={book.id} 
+            book={book}
+            handleClick={handleClick}/>})
+            : <h1>Loading...</h1>
+            }
         </div>
     )
 }
