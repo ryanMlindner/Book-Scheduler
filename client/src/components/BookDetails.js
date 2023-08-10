@@ -1,11 +1,13 @@
 import React from "react";
 
-function BookDetails({ book, setClicked }){
+function BookDetails({ book }){
 
     return(
-        <div >
-            <p onClick={setClicked(false)}>Go back</p>
-            {book}
+        <div className="ui fluid card">
+            <div className="content">
+                <div className="header">Title: {book.title}</div>
+                <div className="description">Author: {book.author}</div>
+            </div>
         </div>
     )
 }

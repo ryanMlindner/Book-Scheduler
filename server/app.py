@@ -91,11 +91,11 @@ class Schedules(Resource):
             db.session.commit()
             schedule_dict = new_schedule.to_dict()
 
-            response = make_response(schedule_dict,201)
+            response = make_response(schedule_dict, 201)
             return response
         
         except ValueError:
-            response = make_response({"errors": ["validation errors"]},400)
+            response = make_response({"errors": ["validation errors"]}, 400)
             return response
 
 class BookRatings(Resource):

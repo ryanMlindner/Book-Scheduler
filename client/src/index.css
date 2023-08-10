@@ -8,30 +8,54 @@
 .add-book {
 	float: left;
 	padding: 10px;
+	font-weight: bold;
+	height: 20px;
 	text-decoration:none;
 	color: black
 }
 
 .header {
-	font-size: larger;
+	background-color: grey;
+	font-size: 30px;
+	font-weight: bold;
+	width: fit-content;
 	display: flex;
 	justify-content: center;
 	padding: 10px;
 	text-decoration:none;
-	color: black
+	color: black;
+	margin: 0 auto;
+
 }
 
 .all-books {
 	float: right;
 	padding: 10px;
+	font-weight: bold;
+	height: 20px;
 	text-decoration:none;
 	color: black
 }
 
-.navbar-container {
+.add-schedule {
+	float: none;
 	padding: 10px;
+	text-decoration:none;
+	color: black
 }
 
+.current {
+	color: blue;
+}
 
+.navbar-container {
+	background-color: lightgrey;
+	padding: 20px;
+	position: relative;
+}
 
+.full-page {
+	margin-left: 15%;
+	margin-right: 15%;
+}
 
