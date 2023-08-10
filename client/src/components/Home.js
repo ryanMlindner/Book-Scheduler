@@ -10,11 +10,12 @@ import { booksAtom, dayAtom, daysAtom } from "../helperFunctions/atoms";
 
 //TODOS HERE
 //css clean up
-//page to display day ratings
-//page to display book ratings
+//page to display day ratings (stretch?) (makes the nav bar pretty again)
+//page to display book ratings (stretch?) (^^)
 //hook up new book form to a fetch
 
 //probably fix the nightmare i created here, we'll see
+//the couple bugs down there V
 
 
 function Home(){
