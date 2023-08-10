@@ -23,9 +23,6 @@ function Home(){
     }
 
     //gets day from calendar and handles formatting to match the database
-    //BUG
-    //if someone adds a schedule to a day and then comes back to the homepage,
-    //the calendar is incorrect until you click on another (or the same) day
     function handleChange(e){
         setValue(e)
         const formatDate = e.toISOString().slice(0, 10) + " 00:00:00";
