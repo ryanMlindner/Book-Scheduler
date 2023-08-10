@@ -43,7 +43,8 @@ class Day(db.Model, SerializerMixin):
 class Schedule(db.Model, SerializerMixin):
     __tablename__ = 'schedules'
 
-    serialize_rules = ('-book.schedules', '-day.schedules')
+    serialize_rules = ('-book.schedules', '-day.schedules',
+                       '-book.ratings', '-day.ratings')
 
     id = db.Column(db.Integer, primary_key=True)
     
@@ -91,7 +92,7 @@ class BookRating(db.Model, SerializerMixin):
 class DayRating(db.Model, SerializerMixin):
     __tablename__ = 'dayratings'
 
-    serialize_rules = ('-day.ratings',)
+    serialize_rules = ('-day.ratings', '-day.schedules')
 
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Integer)

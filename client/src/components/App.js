@@ -1,33 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { booksAtom, daysAtom } from "../helperFunctions/atoms"; 
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import NewBook from "./NewBook";
 import AllBooks from "./AllBooks";
 import Home from "./Home";
+import NewScheduleDisplay from "./NewScheduleDisplay";
 
-// API = 'http://localhost:5555/books'
+const API = 'http://localhost:5555/'
 
 function App() {
-	const [books, setBooks] = useState([])
+	const [books, setBooks] = useRecoilState(booksAtom)
+	const [days, setDays] = useRecoilState(daysAtom)
 
-	// useEffect(() => fetch(API)
-    //     .then(res => res.json())
-    //     .then(setBooks), [])
+	useEffect(() => {
+	fetch(`${API}books`)
+  .then(res => res.json())
+  .then(data => {
+		//console.log(data)
+		setBooks(data)
+	})
+	fetch(`${API}days`)
+  .then(res => res.json())
+  .then(data => {
+		//console.log(data)
+		setDays(data)
+	})
+	}, [])
 
 
 	return (
-		<div>
+		<div className="ui">
 			
 			<NavBar />
+			
 			<Switch>
 				<Route exact path="/">
-					<Home books={books}/>
+					<Home/>
 				</Route>
 				<Route exact path="/new">
 					<NewBook addNewBook={addNewBook}/>
 				</Route>
 				<Route exact path="/books">
-					<AllBooks books={books} />
+					<AllBooks/>
+				</Route>
+				<Route exact path="/schedule">
+					<NewScheduleDisplay/>
 				</Route>
 			</Switch>
 		</div>
