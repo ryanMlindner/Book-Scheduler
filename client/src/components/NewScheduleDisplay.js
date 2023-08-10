@@ -41,7 +41,6 @@ export default function NewScheduleDisplay(){
           else {return day;}
         });
         setDays(updatedDays)
-        setDay(updatedDay)
       })
     })
   }

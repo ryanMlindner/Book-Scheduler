@@ -3,19 +3,13 @@ import { useState } from "react";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Schedule from "./Schedule";
-//can do neat things like how i implemented new scheduling with recoil as opposed to
-//vanilla state, which is why i added it
 import { useRecoilState, useRecoilValue } from "recoil";
 import { booksAtom, dayAtom, daysAtom } from "../helperFunctions/atoms";
 
 //TODOS HERE
 //css clean up
-//page to display day ratings (stretch?) (makes the nav bar pretty again)
-//page to display book ratings (stretch?) (^^)
 //hook up new book form to a fetch
 
-//probably fix the nightmare i created here, we'll see
-//the couple bugs down there V
 
 
 function Home(){
