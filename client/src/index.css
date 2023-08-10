@@ -5,3 +5,33 @@
   --text: hsla(0, 0%, 100%, 0.88);
 }
 
+.add-book {
+	float: left;
+	padding: 10px;
+	text-decoration:none;
+	color: black
+}
+
+.header {
+	font-size: larger;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	text-decoration:none;
+	color: black
+}
+
+.all-books {
+	float: right;
+	padding: 10px;
+	text-decoration:none;
+	color: black
+}
+
+.navbar-container {
+	padding: 10px;
+}
+
+
+
+
