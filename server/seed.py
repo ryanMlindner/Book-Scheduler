@@ -37,7 +37,7 @@ def populate_dates():
     for date_instance in daterange(start_date, end_date):
         day = Day(
             date=date_instance,
-            weekday=date_instance.weekday(),
+            weekday=date_instance.strftime('%A'),
         )
         dates.append(day)
     return dates

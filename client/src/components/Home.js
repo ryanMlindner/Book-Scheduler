@@ -32,8 +32,6 @@ function Home(){
     //BUG
     //if someone adds a schedule to a day and then comes back to the homepage,
     //the calendar is incorrect until you click on another (or the same) day
-    //funnier BUG
-    //clicking on a day that is not in the database crashes the whole app
     function handleChange(e){
         setValue(e)
         const formatDate = e.toISOString().slice(0, 10) + " 00:00:00";

@@ -38,8 +38,23 @@
 }
 
 .add-schedule {
-	float: none;
 	padding: 10px;
+	font-weight: bold;
+	text-decoration:none;
+	color: black
+}
+
+.book-ratings {
+	font-weight: bold;
+	padding: 10px;
+	text-decoration:none;
+	color: black;
+}
+
+.day-ratings {
+	padding: 10px;
+	font-weight: bold;
+	height: 20px;
 	text-decoration:none;
 	color: black
 }

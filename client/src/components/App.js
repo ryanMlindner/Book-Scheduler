@@ -6,6 +6,8 @@ import NavBar from "./NavBar";
 import NewBook from "./NewBook";
 import AllBooks from "./AllBooks";
 import Home from "./Home";
+import DayRatings from "./DayRatings";
+import BookRatings from "./BookRatings";
 import NewScheduleDisplay from "./NewScheduleDisplay";
 
 const API = 'http://localhost:5555/'
@@ -31,7 +33,7 @@ function App() {
 
 
 	return (
-		<div className="ui">
+		<div className="ui full-page">
 			
 			<NavBar />
 			
@@ -47,6 +49,12 @@ function App() {
 				</Route>
 				<Route exact path="/schedule">
 					<NewScheduleDisplay/>
+				</Route>
+				<Route exact path="/dayratings">
+					<DayRatings/>
+				</Route>
+				<Route exact path="/bookratings">
+					<BookRatings/>
 				</Route>
 			</Switch>
 		</div>

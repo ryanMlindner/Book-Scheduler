@@ -100,7 +100,7 @@ class Schedules(Resource):
 
 class BookRatings(Resource):
     def get(self):
-        response = make_response(get_all_dict(BookRating, id))
+        response = make_response(get_all_dict(BookRating), 200)
         return response
     
     def post(self):
@@ -126,7 +126,7 @@ class BookRatings(Resource):
 
 class DayRatings(Resource):
     def get(self):
-        response = make_response(get_all_dict(DayRating, id))
+        response = make_response(get_all_dict(DayRating), 200)
         return response
 
     def post(self):
